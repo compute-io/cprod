@@ -1,4 +1,4 @@
-cumprod
+cprod
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -8,7 +8,7 @@ cumprod
 ## Installation
 
 ``` bash
-$ npm install compute-cumprod
+$ npm install compute-cprod
 ```
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
@@ -21,7 +21,7 @@ To use the module,
 var cprod = require( 'compute-cprod' );
 ```
 
-#### csum( arr )
+#### cprod( arr )
 
 Computes the cumulative product of a numeric `array`.
 
@@ -103,20 +103,20 @@ $ make view-cov
 Copyright &copy; 2015. Philipp Burckhardt.
 
 
-[npm-image]: http://img.shields.io/npm/v/compute-cumprod.svg
-[npm-url]: https://npmjs.org/package/compute-cumprod
+[npm-image]: http://img.shields.io/npm/v/compute-cprod.svg
+[npm-url]: https://npmjs.org/package/compute-cprod
 
-[travis-image]: http://img.shields.io/travis/compute-io/cumprod/master.svg
-[travis-url]: https://travis-ci.org/compute-io/cumprod
+[travis-image]: http://img.shields.io/travis/compute-io/cprod/master.svg
+[travis-url]: https://travis-ci.org/compute-io/cprod
 
-[coveralls-image]: https://img.shields.io/coveralls/compute-io/cumprod/master.svg
-[coveralls-url]: https://coveralls.io/r/compute-io/cumprod?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/compute-io/cprod/master.svg
+[coveralls-url]: https://coveralls.io/r/compute-io/cprod?branch=master
 
-[dependencies-image]: http://img.shields.io/david/compute-io/cumprod.svg
-[dependencies-url]: https://david-dm.org/compute-io/cumprod
+[dependencies-image]: http://img.shields.io/david/compute-io/cprod.svg
+[dependencies-url]: https://david-dm.org/compute-io/cprod
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/compute-io/cumprod.svg
-[dev-dependencies-url]: https://david-dm.org/dev/compute-io/cumprod
+[dev-dependencies-image]: http://img.shields.io/david/dev/compute-io/cprod.svg
+[dev-dependencies-url]: https://david-dm.org/dev/compute-io/cprod
 
-[github-issues-image]: http://img.shields.io/github/issues/compute-io/cumprod.svg
-[github-issues-url]: https://github.com/compute-io/cumprod/issues
+[github-issues-image]: http://img.shields.io/github/issues/compute-io/cprod.svg
+[github-issues-url]: https://github.com/compute-io/cprod/issues
