@@ -8,7 +8,7 @@ cprod
 ## Installation
 
 ``` bash
-$ npm install compute-cumprod
+$ npm install compute-cprod
 ```
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
