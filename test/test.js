@@ -1,4 +1,3 @@
-/* global require, describe, it */
 'use strict';
 
 // MODULES //
@@ -7,7 +6,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	cprod = require( './../lib' );
 
 
 // VARIABLES //
@@ -18,12 +17,44 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'compute-cumprod', function tests() {
+describe( 'compute-cprod', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( cprod ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should throw an error if provided a non-array', function test() {
+		var values = [
+			'5',
+			5,
+			true,
+			undefined,
+			null,
+			NaN,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				cprod( value );
+			};
+		}
+	});
+
+	it( 'should compute the cumulative product', function test() {
+		var data, expected, results;
+
+		data = [ 2, 4, 5, 3, 8, 2 ];
+		expected = [ 2, 8, 40, 120, 960, 1920 ];
+
+		results = cprod( data );
+
+		assert.strictEqual( results.length, expected.length );
+		assert.deepEqual( results, expected );
+	});
 
 });
