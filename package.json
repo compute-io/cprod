@@ -1,5 +1,5 @@
 {
-  "name": "compute-cumprod",
+  "name": "compute-cprod",
   "version": "0.0.0",
   "description": "Computes the cumulative product of a numeric array",
   "author": {
@@ -20,7 +20,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/compute-io/cumprod.git"
+    "url": "git://github.com/compute-io/cprod.git"
   },
   "keywords": [
     "compute.io",
@@ -28,7 +28,7 @@
     "computation"
   ],
   "bugs": {
-    "url": "https://github.com/compute-io/cumprod/issues"
+    "url": "https://github.com/compute-io/cprod/issues"
   },
   "dependencies": {},
   "devDependencies": {

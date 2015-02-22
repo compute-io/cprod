@@ -13,22 +13,43 @@ $ npm install compute-cumprod
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
 
-
 ## Usage
 
+To use the module,
+
 ``` javascript
-var foo = require( 'compute-cumprod' );
+var cprod = require( 'compute-cprod' );
 ```
 
-#### foo( arr )
+#### csum( arr )
 
-What does this function do?
+Computes the cumulative product of a numeric `array`.
+
+``` javascript
+var data = [ 1, 2, 3, 4 ];
+
+cprod( data );
+// returns [ 1, 2, 6, 24 ]
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-cumprod' );
+var cprod = require( 'compute-cprod' );
+
+var data = new Array( 10 );
+
+for ( var i = 0; i < data.length; i++ ) {
+  data[ i ] = Math.round( Math.random() * 10 + 1 )  ;
+}
+
+data.sort( function sort( a, b ) {
+  return a - b;
+});
+
+console.log( cprod( data ) );
+// returns [...]
 ```
 
 To run the example code from the top-level application directory,
@@ -36,6 +57,11 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+
+## Notes
+
+The function returns an `array` with a length equal to the original input `array`.
 
 
 ## Tests
@@ -69,7 +95,7 @@ $ make view-cov
 ---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
 ## Copyright
