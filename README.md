@@ -21,7 +21,7 @@ To use the module,
 var cprod = require( 'compute-cprod' );
 ```
 
-#### csum( arr )
+#### cprod( arr )
 
 Computes the cumulative product of a numeric `array`.
 
