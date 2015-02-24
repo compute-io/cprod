@@ -1,7 +1,7 @@
 {
   "name": "compute-cprod",
   "version": "0.0.0",
-  "description": "Computes the cumulative product of a numeric array",
+  "description": "Computes the cumulative product of an array.",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -10,6 +10,10 @@
     {
       "name": "Philipp Burckhardt",
       "email": "pburckhardt@outlook.com"
+    },
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
     }
   ],
   "scripts": {
@@ -31,15 +35,20 @@
     "mathematics",
     "math",
     "cumulative",
-    "product"
+    "product",
+    "prod",
+    "cumprod",
+    "array"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/cprod/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.3"
+  },
   "devDependencies": {
-    "chai": "1.x.x",
-    "mocha": "1.x.x",
+    "chai": "2.x.x",
+    "mocha": "2.x.x",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
