@@ -1,8 +1,8 @@
-cprod
+Cumulative Product
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the cumulative product of a numeric array
+> Computes the cumulative product of an array.
 
 
 ## Installation
@@ -15,22 +15,41 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
-
 ``` javascript
 var cprod = require( 'compute-cprod' );
 ```
 
-#### cprod( arr )
+#### cprod( arr[, accessor] )
 
-Computes the cumulative product of a numeric `array`.
+Computes the cumulative product of an `array`. For primitive `arrays`,
 
 ``` javascript
 var data = [ 1, 2, 3, 4 ];
 
-cprod( data );
+var arr = cprod( data );
 // returns [ 1, 2, 6, 24 ]
 ```
+
+For object `arrays`, provide an accessor `function` for accessing `array` values
+
+``` javascript
+var data = [
+	['beep', 1],
+	['boop', 2],
+	['bap', 3],
+	['baz', 4]
+];
+
+function getValue( d ) {
+	return d[ 1 ];
+}
+
+var arr = cprod( arr, getValue );
+// returns [ 1, 2, 6, 24 ]
+```
+
+__Note__: the function returns an `array` with a length equal to the original input `array`.
+
 
 
 ## Examples
@@ -39,14 +58,9 @@ cprod( data );
 var cprod = require( 'compute-cprod' );
 
 var data = new Array( 10 );
-
 for ( var i = 0; i < data.length; i++ ) {
-  data[ i ] = Math.round( Math.random() * 10 + 1 )  ;
+	data[ i ] = Math.round( Math.random() * 10 ) + 1;
 }
-
-data.sort( function sort( a, b ) {
-  return a - b;
-});
 
 console.log( cprod( data ) );
 // returns [...]
@@ -57,11 +71,6 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
-
-
-## Notes
-
-The function returns an `array` with a length equal to the original input `array`.
 
 
 ## Tests
