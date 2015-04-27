@@ -91,6 +91,41 @@ describe( 'compute-cprod', function tests() {
 		}
 	});
 
+	it( 'should throw an error if provided a copy option which is not a boolean', function test() {
+		var values = [
+			'5',
+			5,
+			function(){},
+			undefined,
+			null,
+			NaN,
+			[],
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[ i ] ) ).to.throw( TypeError );
+		}
+
+		function badValue( value ) {
+			return function() {
+				cprod( [1,2,3,4,5], {'copy': value} );
+			};
+		}
+	});
+
+	it( 'should not mutate the input array by default', function test() {
+		var data, expected, actual;
+
+		data = [ 1, 2, 3 ];
+		expected = [ 1, 2, 6 ];
+
+		actual = cprod( data );
+		assert.deepEqual( actual, expected );
+		assert.ok( actual !== data );
+	});
+
+
 	it( 'should compute the cumulative product', function test() {
 		var data, expected, results;
 
@@ -124,6 +159,18 @@ describe( 'compute-cprod', function tests() {
 		function getValue( d ) {
 			return d.x;
 		}
+	});
+
+	it( 'should compute the cumulative product and mutate the input array', function test() {
+		// Case 4: numeric, mutate
+		var data, expected, actual;
+
+		data = [ 1, 2, 3 ];
+		expected = [ 1, 2, 6 ];
+
+		actual = cprod( data, { 'copy':false } );
+		assert.deepEqual( actual, expected );
+		assert.ok( actual === data );
 	});
 
 	it( 'should zero the array once a zero is encountered', function test() {
