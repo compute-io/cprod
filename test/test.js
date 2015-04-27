@@ -46,6 +46,29 @@ describe( 'compute-cprod', function tests() {
 		}
 	});
 
+	it( 'should throw an error if provided options argument is not an object', function test() {
+		var values = [
+			'5',
+			5,
+			true,
+			undefined,
+			null,
+			NaN,
+			function(){},
+			[]
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				cprod( [], value );
+			};
+		}
+	});
+
+
 	it( 'should throw an error if provided an accessor which is not a function', function test() {
 		var values = [
 			'5',
@@ -63,7 +86,7 @@ describe( 'compute-cprod', function tests() {
 		}
 		function badValue( value ) {
 			return function() {
-				cprod( [], value );
+				cprod( [], { 'accessor': value } );
 			};
 		}
 	});
@@ -93,7 +116,7 @@ describe( 'compute-cprod', function tests() {
 		];
 		expected = [ 2, 8, 40, 120, 960, 1920 ];
 
-		results = cprod( data, getValue );
+		results = cprod( data, { 'accessor':getValue } );
 
 		assert.strictEqual( results.length, data.length );
 		assert.deepEqual( results, expected );
@@ -127,14 +150,14 @@ describe( 'compute-cprod', function tests() {
 		data = [ 2, 4, 0, 3, 8, 2 ];
 		expected = [ 2, 8, 0, 0, 0, 0 ];
 
-		results = cprod( data, getValue );
+		results = cprod( data, { 'accessor': getValue } );
 
 		assert.deepEqual( results, expected );
 
 		data = [ 0, 4, 5, 3, 8, 2 ];
 		expected = [ 0, 0, 0, 0, 0, 0 ];
 
-		results = cprod( data, getValue );
+		results = cprod( data, { 'accessor': getValue } );
 
 		assert.deepEqual( results, expected );
 
