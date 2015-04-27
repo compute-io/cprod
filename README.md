@@ -19,7 +19,7 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 var cprod = require( 'compute-cprod' );
 ```
 
-#### cprod( arr[, accessor] )
+#### cprod( arr[, options] )
 
 Computes the cumulative product of an `array`. For primitive `arrays`,
 
@@ -30,7 +30,14 @@ var arr = cprod( data );
 // returns [ 1, 2, 6, 24 ]
 ```
 
-For object `arrays`, provide an accessor `function` for accessing `array` values
+The function accepts two `options`:
+
+*  __copy__: `boolean` indicating whether to return a new `array` containing the cumulative products. Default: `true`.
+*  __accessor__: accessor `function` for accessing numerical values in object `arrays`.
+
+To mutate the input `array` (e.g. when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
+
+For object `arrays`, provide an accessor `function` for accessing `array` values.
 
 ``` javascript
 var data = [
