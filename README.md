@@ -35,7 +35,7 @@ The function accepts two `options`:
 *  __copy__: `boolean` indicating whether to return a new `array` containing the cumulative products. Default: `true`.
 *  __accessor__: accessor `function` for accessing numeric values in object `arrays`.
 
-To mutate the input `array` (e.g. when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
+To mutate the input `array` (e.g., when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
 
 ``` javascript
 var data = [ 1, 2, 3, 4 ];
