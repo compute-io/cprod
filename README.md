@@ -33,11 +33,27 @@ var arr = cprod( data );
 The function accepts two `options`:
 
 *  __copy__: `boolean` indicating whether to return a new `array` containing the cumulative products. Default: `true`.
+<<<<<<< HEAD
 *  __accessor__: accessor `function` for accessing numerical values in object `arrays`.
 
 To mutate the input `array` (e.g. when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
 
-For object `arrays`, provide an accessor `function` for accessing `array` values.
+To mutate the input `array` (e.g., when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
+
+``` javascript
+var data = [ 1, 2, 3, 4 ];
+
+var arr = cprod( data, {
+	'copy': false
+});
+// returns [ 1, 2, 6, 24 ]
+
+console.log( data === arr );
+// returns true
+```
+
+For object `arrays`, provide an accessor `function` for accessing numeric `array` values.
+
 
 ``` javascript
 var data = [
@@ -47,11 +63,13 @@ var data = [
 	['baz', 4]
 ];
 
-function getValue( d ) {
+function getValue( d, i ) {
 	return d[ 1 ];
 }
 
-var arr = cprod( arr, getValue );
+var arr = cprod( arr, {
+	'accessor': getValue
+});
 // returns [ 1, 2, 6, 24 ]
 ```
 
