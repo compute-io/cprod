@@ -31,12 +31,12 @@ arr = cprod( data );
 // returns [ 1, 2, 6, 24 ]
 ```
 
-The function accepts two `options`:
+The function accepts the following `options`:
 
 *  __copy__: `boolean` indicating whether to return a new data structure containing the cumulative products. Default: `true`.
 *  __accessor__: accessor `function` for accessing numerical values in object `arrays`.
-*	__dim__: dimension along which to compute the cumulative product when provided a matrix. Default: `2` (along the columns).
-*	__dtype__: output data type. Default: `float64`.
+*  __dim__: dimension along which to compute the cumulative product when provided a matrix. Default: `2` (along the columns).
+*  __dtype__: output data type. Default: `float64`.
 
 For object `arrays`, provide an accessor `function` for accessing numeric `array` values.
 
