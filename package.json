@@ -1,7 +1,7 @@
 {
   "name": "compute-cprod",
   "version": "2.0.0",
-  "description": "Computes the cumulative product of an array.",
+  "description": "Computes the cumulative product.",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -44,23 +44,24 @@
     "url": "https://github.com/compute-io/cprod/issues"
   },
   "dependencies": {
+    "compute-array-constructors": "^1.0.0",
+    "dstructs-matrix": "^2.0.0",
     "validate.io-array": "^1.0.3",
+    "validate.io-array-like": "^1.0.1",
     "validate.io-boolean-primitive": "^1.0.0",
     "validate.io-function": "^1.0.2",
-    "validate.io-object": "^1.0.3"
+    "validate.io-matrix-like": "^1.0.2",
+    "validate.io-object": "^1.0.3",
+    "validate.io-positive-integer": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "2.x.x",
+    "chai": "3.x.x",
     "mocha": "2.x.x",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
-    "jshint-stylish": "^1.0.0"
+    "jshint-stylish": "2.x.x"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "license": "MIT"
 }
