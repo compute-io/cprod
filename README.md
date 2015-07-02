@@ -142,7 +142,7 @@ out = cprod( data, {
 bool = ( data === out );
 // returns true
 
-data = new Int16Array( 6 );
+data = new Int16Array( 9 );
 for ( i = 0; i < 9; i++ ) {
 	data[ i ] = i;
 }
